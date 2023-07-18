@@ -4,13 +4,6 @@
     <body>
         {{- partial "header.html" . -}}
         <div id="content">
-            <div class="logo-container">
-                <div class="site-title-container">
-                    <h1 class="site-title">
-                        <span style="color: #f4eeea;">V</span><span style="color: white;">M</span>
-                    </h1>
-                </div>
-            </div>
             {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}

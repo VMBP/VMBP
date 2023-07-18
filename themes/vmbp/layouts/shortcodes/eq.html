@@ -1,0 +1,7 @@
+{{ $inline := .Get 0 }}
+
+{{ with .Inner }}
+    $${{ . }}$$
+{{ else }}
+    {{ $inline }}
+{{ end }}

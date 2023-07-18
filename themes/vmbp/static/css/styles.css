@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -119,6 +119,7 @@ html {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 3px 0 #cacaca;
 }
 
 .post-title {
@@ -214,12 +215,11 @@ html {
     display: flex;
     justify-content: center;
     padding: 50px;
-    max-width: 800px;
     line-break: anywhere;
 }
 
 .page {
-    max-width: 70ch;
+    max-width: min(100%, 900px);
     line-height: 1.5;
 }
 
@@ -229,40 +229,11 @@ html {
 }
 
 .toc-container {
-    padding-right: 20px;
-    min-width: 200px;
-}
-
-.toc {
-    position: sticky;
-    right: 0;
-    top: 150px;
-    max-width: 300px;
-    border: 1px solid #aaa;
     padding: 20px;
-    border-radius: 28px;
+    min-width: 200px;
+    float: right;
 }
 
-.toc ul {
-    padding-left: 10px;
-}
-
-.toc ul li {
-    list-style: none;
-}
-
-.toc a {
-    text-decoration: none;
-    color: #777;
-}
-
-.toc a:hover {
-    color: #555;
-}
-
-.toc a:active {
-    color: #111;
-}
 
 .page-split {
     display: flex;
@@ -271,6 +242,7 @@ html {
 .toc-title {
     font-weight: bold;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .authorship {
@@ -291,4 +263,197 @@ mjx-container {
     display: inline-block;
     padding: 5px 20px 0 0;
     border-top: 1px solid #aaa;
+}
+
+.logo-container-post {
+    text-align: center;
+    border-bottom: 1px solid white;
+    background-color: #1d1c15;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.site-title-container-post {
+    padding: 0 45px;
+    text-decoration: none;
+    color: #111;
+}
+
+.site-title-post {
+    padding: 5px 5px;
+    font-size: 22.5px;
+    background-color: white;
+}
+
+.site-title-post:hover {
+    color: #888262;
+}
+
+.site-title-post:active {
+    color: #474433;
+}
+
+.article-post-title {
+    color: white;
+    flex: 1;
+    text-align: center;
+}
+
+.title {
+    font-size: 15px;
+}
+
+.article {
+    font-size: 16px;
+}
+
+.article p {
+    font-family: "Noto Serif SC", "SimSun", serif;
+    font-size: 1em;
+    padding-bottom: 1.5em;
+}
+
+.post-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #1d1c15;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.post-footer-item {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.post-footer-item-img {
+    height: 20px;
+    width: auto;
+    filter: invert(1);
+}
+
+.footer-label {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-footer-item:hover .post-footer-item-img {
+    filter: invert(1) brightness(0.9);
+}
+
+.post-footer-item:hover .footer-label {
+    color: #ccc;
+}
+
+.post-footer-item:active .post-footer-item-img {
+    filter: invert(1) brightness(0.5);
+}
+
+.post-footer-item:active .footer-label {
+    color: #666;
+}
+
+.article img {
+    max-width: 100%;
+}
+
+.article a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #918a65;
+}
+
+.article a:hover {
+    color: #5d5841;
+}
+
+.article a:active {
+    color: #222018;
+}
+
+.article ol, .article ul {
+    padding-bottom: 1.5em;
+    font-size: 1em;
+    font-family: "Noto Serif SC", "SimSun", serif;
+}
+
+.highlight {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    overflow: auto;
+    margin-bottom: 1.5em;
+}
+
+.highlight pre {
+    padding: 5px;
+    line-height: 1.3em;
+    font-size: 0.875em;
+}
+
+code {
+    font-family: "Source Code Pro", monospace;
+}
+
+.article figure {
+    text-align: center;
+}
+
+.article figure figcaption {
+    color: #777;
+    font-style: italic;
+}
+
+.toc {
+    max-width: 300px;
+    border: 1px solid #aaa;
+    padding: 20px;
+    border-radius: 28px;
+    box-shadow: 0 0 3px #cdcdcd;
+}
+
+.toc ul {
+    padding-left: 10px;
+}
+
+.toc ul li {
+    list-style: none;
+    font-family: Rubik, Roboto, sans-serif;
+    font-size: 15px;
+}
+
+.toc a {
+    text-decoration: none;
+    color: #777;
+    font-weight: normal;
+}
+
+.toc a:hover {
+    color: #555;
+}
+
+.toc a:active {
+    color: #111;
+}
+
+@media print {
+    .site-title-container-post {
+        display: none;
+    }
+
+    .post-footer {
+        display: none;
+    }
+
+    .footer {
+        display: none;
+    }
 }

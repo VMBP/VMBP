@@ -1,0 +1,13 @@
+<!-- https://gohugo.io/content-management/image-processing/ -->
+
+{{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $width := .Get 1 }}
+{{ $caption := .Get 2 }}
+<p>
+    <figure>
+    <img style="max-width: 100%; width: {{ $width }}; height: auto;" src="{{ $img.RelPermalink }}">
+    <figcaption>
+        {{ $caption }}
+    </figcaption>
+    </figure>
+</p>

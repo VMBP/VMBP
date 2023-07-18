@@ -2,3 +2,7 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'VMBP'
 theme = "vmbp"
+
+[markup]
+    [markup.highlight]
+        style = "colorful"

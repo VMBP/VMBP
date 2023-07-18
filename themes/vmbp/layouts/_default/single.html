@@ -1,36 +1,60 @@
 {{ define "main" }}
-    <div class="page-split">
-        <div class="page-container">
-            <div class="page">
-                <h1 class="title">
-                    {{ .Title }}
-                </h1>
-                <div class="authorship">
-                    <strong>作者</strong>：{{ .Params.author }}
-                </div>
-                <div class="authorship">
-                    <strong>写于</strong>：{{ .Params.date }}
-                </div>
-                <article>
-                    {{ .Content }}
-                </div>
+    <div class="logo-container-post">
+        <a href="{{ .Site.BaseURL }}" class="site-title-container-post">
+            <h1 class="site-title-post">
+                VM
+            </h1>
+        </a>
+        <div class="article-post-title">
+            <h1 class="title">
+                {{ .Title }}
+            </h1>
+        </div>
+    </div>
+    <div class="page-container">
+        <div class="page">
+            <div class="authorship">
+                <strong>作者</strong>：{{ .Params.author }}
             </div>
-            <div class="toc-container">
-                <div class="toc">
-                    <div class="toc-title">目录</div>
-                    {{ .TableOfContents }}
+            <div class="authorship">
+                <strong>写于</strong>：{{ .Params.date }}
+            </div>
+            <article class="article">
+                <div class="toc-container">
+                    <div class="toc">
+                        <div class="toc-title">目录</div>
+                        {{ .TableOfContents }}
+                    </div>
                 </div>
+                {{ .Content }}
             </div>
         </div>
     </div>
+    <div class="post-footer">
+        <div onclick="backToTop()" class="post-footer-item">
+            <img class="post-footer-item-img" src="/GoToPrevious.svg">
+            <div class="footer-label">回到顶端</div>
+        </div>
+        <div onclick="increaseFontSize()" class="post-footer-item">
+            <img class="post-footer-item-img" src="/IncreaseFontSize.svg">
+            <div class="footer-label">增大字体</div>
+        </div>
+        <div onclick="decreaseFontSize()" class="post-footer-item">
+            <img class="post-footer-item-img" src="/DecreaseFontSize.svg">
+            <div class="footer-label">缩小字体</div>
+        </div>
+        <div onclick="printArticle()" class="post-footer-item">
+            <img class="post-footer-item-img" src="/Print.svg">
+            <div class="footer-label">打印文章</div>
+        </div>
+    </div>
     <script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-    };
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
     </script>
     <script src="/js/tex-mml-chtml.js"></script>
-
-
+    <script src="/js/navigation.js"></script>
 {{ end }}
