@@ -1,0 +1,56 @@
+{{ define "main" }}
+    <div class="viewport">
+
+        <div class="welcome">
+            <h2>欢迎来到 VertexMind</h2>
+            <p>共享，开放，专业的写作/阅读平台</p>
+            <p>点击任意分类以开始</p>
+            <div class="nav-bar">
+                {{ range .Pages }}
+                    {{ if eq .Title "Authors" }}
+                        {{ continue }}
+                    {{ end }}
+                    <a href="{{ .Permalink }}" class="nav-bar-item">
+                        {{ .Title }}
+                    </a>
+                {{ end }}
+                <a href="#" class="nav-bar-item">
+                    关于
+                </a>
+            </div>
+        </div>
+        <div class="panes">
+            <div class="left">
+                <h2 class="recent">最近发表</h2>
+                <div class="posts">
+                    {{ range $.Site.RegularPages }}
+                        {{ if eq .Section "authors" }}
+                            {{ continue }}
+                        {{ end }}
+                        <div class="post">
+                            <div>
+                                <h2 class="post-title">{{ .Title }}</h2>
+                                <div class="post-content">{{ .Summary }}</div>
+                            </div>
+                            <div class="go">
+                                <a href="{{ .Permalink }}" class="go-arrow">
+                                    <img class="go-img" src="/ExpandRight.svg">
+                                </a>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="right">
+                <h2 class="authors-title">作者</h2>
+                <div class="authors">
+                    {{ range where $.Site.RegularPages "Section" "authors" }}
+                        <div class="author">
+                            <img class="avatar" src="{{ .Params.avatar }}" alt={{ .Summary }}>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

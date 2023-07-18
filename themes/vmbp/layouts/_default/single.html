@@ -1,0 +1,36 @@
+{{ define "main" }}
+    <div class="page-split">
+        <div class="page-container">
+            <div class="page">
+                <h1 class="title">
+                    {{ .Title }}
+                </h1>
+                <div class="authorship">
+                    <strong>作者</strong>：{{ .Params.author }}
+                </div>
+                <div class="authorship">
+                    <strong>写于</strong>：{{ .Params.date }}
+                </div>
+                <article>
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="toc-container">
+                <div class="toc">
+                    <div class="toc-title">目录</div>
+                    {{ .TableOfContents }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>
+    <script src="/js/tex-mml-chtml.js"></script>
+
+
+{{ end }}
