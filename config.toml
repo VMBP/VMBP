@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://vertexmind.org'
 languageCode = 'en-us'
 title = 'VMBP'
 theme = "vmbp"
