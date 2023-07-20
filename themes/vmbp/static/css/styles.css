@@ -104,31 +104,22 @@ html {
 }
 
 .posts {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 20px;
-/*     justify-content: center; */
+    padding: 0;
 }
 
 .post {
-    border: 1px solid #aaa;
     padding: 15px;
-    border-radius: 28px;
-    max-width: 200px;
-    margin-right: 10px;
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 3px 0 #cacaca;
+    border-top: 1px solid #aaa;
 }
 
 .post-title {
     font-size: 15px;
-    display: inline;
 }
 
 .post-content {
-    display: inline;
+    padding-top: 10px;
     color: #555;
 }
 
@@ -137,6 +128,7 @@ html {
     flex: 1;
     align-items: end;
     justify-content: end;
+    padding-top: 10px;
 }
 
 .go-arrow {
@@ -265,7 +257,7 @@ mjx-container {
     border-top: 1px solid #aaa;
 }
 
-.logo-container-post {
+.logo-container-post, .logo-container-category {
     text-align: center;
     border-bottom: 1px solid white;
     background-color: #1d1c15;
@@ -275,6 +267,10 @@ mjx-container {
     left: 0;
     top: 0;
     z-index: 100;
+}
+
+.logo-container-category {
+    background-color: #67634b;
 }
 
 .site-title-container-post {
@@ -287,6 +283,10 @@ mjx-container {
     padding: 5px 5px;
     font-size: 22.5px;
     background-color: white;
+}
+
+.site-title-category {
+    color: #67634b;
 }
 
 .site-title-post:hover {
@@ -326,6 +326,7 @@ mjx-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-top: 1px solid #5b5743;
 }
 
 .post-footer-item {
@@ -444,6 +445,14 @@ code {
     color: #111;
 }
 
+.toc ul {
+    padding-bottom: 0;
+}
+
+.intro {
+    padding: 20px 0;
+}
+
 @media print {
     .site-title-container-post {
         display: none;
@@ -455,5 +464,42 @@ code {
 
     .footer {
         display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .site-title-container-post, .site-title-container {
+        padding: 0;
+    }
+
+    .toc-container {
+        display: flex;
+        float: unset;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .toc {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .panes {
+        display: block;
+    }
+
+    .right {
+        width: unset;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .authors-title {
+        padding: 0 45px;
+    }
+
+    .authors {
+        padding: 10px 20px;
     }
 }

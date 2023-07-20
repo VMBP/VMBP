@@ -9,7 +9,7 @@
         </div>
         <div class="welcome">
             <h2>欢迎来到 VertexMind</h2>
-            <p>共享，开放，专业的写作/阅读平台</p>
+            <p>共享，开放，专业的中文写作/阅读平台</p>
             <p>点击任意分类以开始</p>
             <div class="nav-bar">
                 {{ range .Pages }}
@@ -20,9 +20,6 @@
                         {{ .Title }}
                     </a>
                 {{ end }}
-                <a href="#" class="nav-bar-item">
-                    关于
-                </a>
             </div>
         </div>
         <div class="panes">
@@ -30,7 +27,7 @@
                 <h2 class="recent">最近发表</h2>
                 <div class="posts">
                     {{ range $.Site.RegularPages }}
-                        {{ if eq .Section "authors" }}
+                        {{ if (or (eq .Section "authors") (eq .Title "关于")) }}
                             {{ continue }}
                         {{ end }}
                         <div class="post">

@@ -1,3 +1,54 @@
 {{ define "main" }}
+    <div class="viewport">
+        <div class="logo-container-category">
+            <a href="{{ .Site.BaseURL }}" class="site-title-container-post">
+                <h1 class="site-title-post site-title-category">
+                    VM
+                </h1>
+            </a>
+            <div class="article-post-title">
+                <h1 class="title">
+                    分类：{{ .Title }}
+                </h1>
+            </div>
+        </div>
+        <div class="intro">
 
+        </div>
+        <div class="panes">
+            <div class="left">
+                <h2 class="recent">最近发表</h2>
+                <div class="posts">
+                    {{ range $.Site.RegularPages }}
+                        {{ if (or (eq .Section "authors") (eq .Title "关于")) }}
+                            {{ continue }}
+                        {{ end }}
+                        <div class="post">
+                            <div>
+                                <h2 class="post-title">{{ .Title }}</h2>
+                                <div class="post-content">{{ .Summary }}</div>
+                            </div>
+                            <div class="go">
+                                <a href="{{ .Permalink }}" class="go-arrow">
+                                    <img class="go-img" src="/ExpandRight.svg">
+                                </a>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="right">
+                <h2 class="authors-title">作者</h2>
+                <div class="authors">
+                    {{ range where $.Site.RegularPages "Section" "authors" }}
+                        {{ if eq $.Title (.Params.area) }}
+                            <div class="author">
+                                <img class="avatar" src="{{ .Params.avatar }}" alt={{ .Summary }}>
+                            </div>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
 {{ end }}
