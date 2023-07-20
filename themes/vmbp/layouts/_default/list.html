@@ -19,7 +19,7 @@
             <div class="left">
                 <h2 class="recent">最近发表</h2>
                 <div class="posts">
-                    {{ range $.Site.RegularPages }}
+                    {{ range .Pages }}
                         {{ if (or (eq .Section "authors") (eq .Title "关于")) }}
                             {{ continue }}
                         {{ end }}
